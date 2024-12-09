@@ -3,7 +3,7 @@ if __name__ == "__main__":
     sys.path.append('code')
     from menuitem import MenuItem
 else:
-    from menuitem import MenuItem
+    from src.menuitem import MenuItem
 
 
 def clean_price(price:str) -> float:
@@ -25,11 +25,9 @@ def clean_scraped_text(scraped_text: str) -> list[str]:
         if len(item.strip()) == 0:
             continue
 
-        cleaned.append(item)
+        cleaned.append(item.strip())
 
     return cleaned
-
-
 
 def extract_menu_item(title:str, scraped_text: str) -> MenuItem:
     cleaned_items = clean_scraped_text(scraped_text)
@@ -41,9 +39,6 @@ def extract_menu_item(title:str, scraped_text: str) -> MenuItem:
     else:
         item.description = "No description available."
     return item
-
-
-
 
 if __name__=='__main__':
     test_items = [
@@ -77,7 +72,6 @@ Add chicken $2.99 | Add guacamole $2.39
 
 $6.99
 '''
-
     ]
     title = "TEST"
     for scraped_text in test_items:
