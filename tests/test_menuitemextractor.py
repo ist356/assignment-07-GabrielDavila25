@@ -1,6 +1,6 @@
 import pytest 
-from code.menuitem import MenuItem
-from code.menuitemextractor import clean_scraped_text, clean_price, extract_menu_item
+from src.menuitem import MenuItem
+from src.menuitemextractor import clean_scraped_text, clean_price, extract_menu_item
 
 
 TEST_DATA = [
